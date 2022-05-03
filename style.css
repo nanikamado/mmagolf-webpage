@@ -1,0 +1,195 @@
+:root {
+  color: #111;
+  font-family: sans-serif;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+* {
+  font-weight: normal;
+}
+
+h2 {
+  border-bottom: solid 1px #ccc;
+  line-height: 1.5em;
+  margin: 2.5rem 0 1.4rem 0;
+}
+
+h2:first-child {
+  margin-top: 1.8rem;
+}
+
+.pages {
+  position: relative;
+  z-index: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pages > div {
+  max-width: 50rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  width: calc(100% - 2rem);
+  display: none;
+  margin: 0;
+}
+
+.pages > div.active {
+  display: block;
+}
+
+.nav {
+  border-bottom: solid 1px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav > ul {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: .7rem 0 0 0;
+  padding: 0;
+  max-width: 50rem;
+}
+
+.nav > ul a {
+  color: unset;
+  text-decoration: none;
+  width: 100%;
+}
+
+.nav > ul > li {
+  list-style-type: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  text-align: center;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+}
+
+.nav > ul > li + li > a {
+  -webkit-box-shadow: -1px 0 0 0 #999;
+          box-shadow: -1px 0 0 0 #999;
+}
+
+.nav > ul > li + li.active > a {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.nav > ul > li.active {
+  -webkit-box-shadow: 0 1px 0 0 #ffffff, 4px 4px 0px #000, 0 0 0 1px #000;
+          box-shadow: 0 1px 0 0 #ffffff, 4px 4px 0px #000, 0 0 0 1px #000;
+  z-index: 1;
+}
+
+table.ranking {
+  border-collapse: collapse;
+  width: 100%;
+  word-break: break-all;
+}
+
+table.ranking td,
+table.ranking th {
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+table.ranking th {
+  padding: .3em .7em;
+}
+
+table.ranking td {
+  padding: .2em .7em;
+  border-top: none;
+}
+
+table.ranking td:nth-child(2),
+table.ranking th:nth-child(2) {
+  text-align: right;
+}
+
+table.ranking pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+table.ranking a {
+  color: #000;
+}
+
+table.ranking tr.code > td {
+  border-bottom: none;
+  text-align: left;
+  padding: 0 .2em;
+}
+
+table.ranking tr.code > td > pre {
+  height: 0;
+  overflow: hidden;
+}
+
+table.ranking tr.expanded + tr > td {
+  padding: .2em .6em;
+  border-bottom: 1px solid #ccc;
+}
+
+table.ranking tr.expanded + tr > td > pre {
+  height: auto;
+}
+/*# sourceMappingURL=style.css.map */
