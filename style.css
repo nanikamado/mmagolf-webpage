@@ -139,7 +139,7 @@ h2:first-child {
 }
 
 .rankings {
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 table {
