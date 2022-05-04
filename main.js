@@ -39,7 +39,7 @@
                         tbody.appendChild(tr);
                         let code = document.createElement("tr");
                         code.classList.add('code');
-                        code.innerHTML = `<td colspan="${r.length - 1}"><div><table><tbody><tr><th>提出日時</th></tr><tr><td>${r[3]}</td></tr><tr><th>コード</th></tr><tr><td><pre>${r[4]}</pre></td></tr></tbody></table></div></td>`;
+                        code.innerHTML = `<td colspan="${r.length - 1}"><div><table><tbody><tr><th>提出日時</th></tr><tr><td>${r[3]}</td></tr><tr><th>コード</th></tr><tr><td><pre>${r[4]}&#010;</pre></td></tr></tbody></table></div></td>`;
                         tbody.appendChild(code);
                     });
                 });

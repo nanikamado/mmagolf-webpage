@@ -201,6 +201,11 @@ table.ranking tr.code > td > div > table > tbody > tr > :is(th, td) {
   text-align: left;
 }
 
+table.ranking tr.code > td > div > table pre {
+  padding: .1em;
+  background-color: #f0f0f0;
+}
+
 table.ranking tr.expanded + tr > td > div {
   height: auto;
 }

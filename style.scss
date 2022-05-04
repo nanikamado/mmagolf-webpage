@@ -137,6 +137,10 @@ table.ranking {
                 &>tbody>tr>:is(th, td) {
                     text-align: left;
                 }
+                pre {
+                    padding: .1em;
+                    background-color: #f0f0f0;
+                }
             }
         }
     }
