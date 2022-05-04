@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const pug = require('gulp-pug');
 const sass = require("gulp-sass")(require("sass"));
 const through = require('through2');
@@ -12,7 +12,7 @@ md.use(mkKatex);
 md.use(mkContainer, 'code-with-katex');
 
 exports.pug = () =>
-    gulp.src(
+    src(
         ['./src/**/*.pug', '!./src/**/_*.pug']
     )
     .pipe(pug({
@@ -24,28 +24,15 @@ exports.pug = () =>
             'markdown': (text, options) => md.render(text)
         }
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(dest('./dist'));
 
 exports.scss = () =>
-    gulp
-    .src("src/style.scss")
+    src("src/style.scss")
     .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(gulp.dest("dist"));
+    .pipe(dest("dist"));
 
 exports.js = () =>
-    gulp
-    .src("src/main.js")
-    .pipe(gulp.dest("dist"));
+    src("src/main.js")
+    .pipe(dest("dist"));
 
-exports.md = () =>
-    gulp
-    .src("src/problems/*.md")
-    .pipe(through.obj(function(file, enc, cb) {
-        file.contents = Buffer.from(md.render(String(file.contents)));
-        cb(null, file);
-    })).pipe(
-        rename({
-            extname: ".html"
-        })
-    )
-    .pipe(gulp.dest("dist/problems"));
+exports.default = parallel(exports.pug, exports.scss, exports.js);
