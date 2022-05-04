@@ -35,11 +35,11 @@
                 $$('.rankings>.ranking>tbody').forEach((tbody, i) => {
                     ranking[i].forEach((r, j) => {
                         let tr = document.createElement("tr");
-                        tr.innerHTML = `<td>${j + 1}</td><td>${r[0]} B</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td><a href="javascript:void(0)" class="detail-button">コード</a></td>`;
+                        tr.innerHTML = `<td rowspan="2">${j + 1}</td><td>${r[0]} B</td><td>${r[1]}</td><td>${r[2]}</td><td><a href="javascript:void(0)" class="detail-button">詳細</a></td>`;
                         tbody.appendChild(tr);
                         let code = document.createElement("tr");
                         code.classList.add('code');
-                        code.innerHTML = `<td colspan="${r.length + 1}"><pre>${r[4]}</pre></td>`;
+                        code.innerHTML = `<td colspan="${r.length - 1}"><div><table><tbody><tr><th>提出日時</th></tr><tr><td>${r[3]}</td></tr><tr><th>コード</th></tr><tr><td><pre>${r[4]}</pre></td></tr></tbody></table></div></td>`;
                         tbody.appendChild(code);
                     });
                 });

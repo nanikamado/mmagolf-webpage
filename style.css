@@ -138,35 +138,42 @@ h2:first-child {
   z-index: 1;
 }
 
-table.ranking {
+.rankings {
+  overflow-x: scroll;
+}
+
+table {
   border-collapse: collapse;
+}
+
+table.ranking {
   width: 100%;
-  word-break: break-all;
+  white-space: nowrap;
 }
 
 table.ranking td,
 table.ranking th {
   text-align: center;
-  border: 1px solid #ccc;
 }
 
 table.ranking th {
   padding: .3em .7em;
+  border-bottom: 1px solid #ccc;
 }
 
 table.ranking td {
   padding: .2em .7em;
-  border-top: none;
 }
 
-table.ranking td:nth-child(2),
-table.ranking th:nth-child(2) {
+table.ranking > tbody > tr > :is(td, th):nth-child(2),
+table.ranking > thead > tr > :is(td, th):nth-child(2) {
   text-align: right;
 }
 
 table.ranking pre {
   margin: 0;
   white-space: pre-wrap;
+  word-break: break-all;
 }
 
 table.ranking a {
@@ -174,22 +181,27 @@ table.ranking a {
 }
 
 table.ranking tr.code > td {
-  border-bottom: none;
-  text-align: left;
-  padding: 0 .2em;
+  padding: 0;
 }
 
-table.ranking tr.code > td > pre {
+table.ranking tr.code > td > div {
   height: 0;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
-table.ranking tr.expanded + tr > td {
-  padding: .2em .6em;
+table.ranking tr.code > td > div > table {
+  width: 100%;
+}
+
+table.ranking tr.code > td > div > table th {
   border-bottom: 1px solid #ccc;
 }
 
-table.ranking tr.expanded + tr > td > pre {
+table.ranking tr.code > td > div > table > tbody > tr > :is(th, td) {
+  text-align: left;
+}
+
+table.ranking tr.expanded + tr > td > div {
   height: auto;
 }
 /*# sourceMappingURL=style.css.map */

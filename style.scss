@@ -12,7 +12,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    // font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif;
     font-family: sans-serif;
 }
 
@@ -37,7 +36,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    &>div {
+    >div {
         max-width: 50rem;
         flex: 1 1 100%;
         width: calc(100% - 2rem);
@@ -53,7 +52,7 @@ h2 {
     border-bottom: solid 1px #000;
     display: flex;
     justify-content: center;
-    &>ul {
+    >ul {
         flex: 1 1 100%;
         display: flex;
         justify-content: space-around;
@@ -65,7 +64,7 @@ h2 {
             text-decoration: none;
             width: 100%;
         }
-        &>li {
+        >li {
             list-style-type: none;
             flex: 1 1;
             text-align: center;
@@ -87,51 +86,61 @@ h2 {
     }
 }
 
-table.ranking {
+.rankings {
+    overflow-x: scroll;
+}
+
+table {
     border-collapse: collapse;
+}
+
+table.ranking {
     width: 100%;
-    word-break: break-all;
+    white-space: nowrap;
     td,
     th {
         text-align: center;
-        border: 1px solid #ccc;
     }
     th {
         padding: .3em .7em;
+        border-bottom: 1px solid #ccc;
+        // font-weight: bolder;
+        // font-size: 1.2em;
     }
     td {
         padding: .2em .7em;
-        border-top: none;
     }
-    td:nth-child(2),
-    th:nth-child(2) {
-        text-align: right;
+    >tbody,
+    >thead {
+        >tr>:is(td, th):nth-child(2) {
+            text-align: right;
+        }
     }
     pre {
         margin: 0;
         white-space: pre-wrap;
+        word-break: break-all;
     }
     a {
         color: #000;
     }
-    tr.code {
-        &>td {
-            border-bottom: none;
-            text-align: left;
-            padding: 0 .2em;
-            &>pre {
-                height: 0;
-                overflow: hidden;
+    tr.code>td {
+        padding: 0;
+        >div {
+            height: 0;
+            overflow-y: hidden;
+            >table {
+                width: 100%;
+                th {
+                    border-bottom: 1px solid #ccc;
+                }
+                &>tbody>tr>:is(th, td) {
+                    text-align: left;
+                }
             }
         }
     }
-    tr.expanded+tr {
-        &>td {
-            padding: .2em .6em;
-            border-bottom: 1px solid #ccc;
-            &>pre {
-                height: auto;
-            }
-        }
+    tr.expanded+tr>td>div {
+        height: auto;
     }
 }
