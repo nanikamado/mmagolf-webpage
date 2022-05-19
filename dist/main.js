@@ -28,7 +28,7 @@
         window.addEventListener('popstate', e => {
             movePage(hash_to_n(location.hash));
         });
-        fetch("ranking.json")
+        fetch("ranking.json", { cache: "no-cache" })
             .then(response =>
                 response.json()
             ).then(ranking => {

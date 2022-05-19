@@ -6,7 +6,7 @@ html(lang="ja")
         script(src="main.js")
         link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.css" integrity="sha256-tNxXsOT6dx9hXElc6ZSLWyMEp94gnMIxPGrJqzCZ1Ww=" crossorigin="anonymous")
         link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous")
-        link(href="style.css?1651678800", rel="stylesheet")
+        link(href="style.css?1652997335", rel="stylesheet")
         title MMA コードゴルフ大会
     body
         .nav: ul
@@ -17,13 +17,38 @@ html(lang="ja")
         .pages
             div
                 h2 MMA コードゴルフ大会
-                div コードゴルフとは、どれだけ短いコードで目的のプログラムを書けるかを競う競技です。
+                p MMA 内でコードゴルフ大会を開催したいなと思っています。開催期間は一週間程度、開催時期は未定です。現状、動作確認用の問題として2つの問題が用意してあります。
+                h2 コードゴルフとは
+                p コードゴルフとは、どれだけ短いコードで目的のプログラムを書けるかを競う競技です。
+                h2 提出方法
+                p nestにログインして次のコマンドを打ってください。
+                pre: code= "$ ~mado/.cargo/bin/mmagolf submit -p [問題番号] -l [言語] -f [ソースファイル]"
+                p= "[問題番号] には 1 または 2、[言語] には言語、[ソースファイル] にはファイル名を入れてください。例:"
+                pre: code= "$ ~mado/.cargo/bin/mmagolf submit -p 1 -l bash -f code.bash"
+                p= "-c オプションでソースコードを直接渡すこともできます。例:"
+                pre: code= "$ ~mado/.cargo/bin/mmagolf submit -p 1 -l bash -c 'read a;echo $((a+1))'"
+                p= "コードテストもできます。例:"
+                pre: code= "$ echo 1 | ~mado/.cargo/bin/mmagolf codetest -l bash -c 'read a;echo $((a+1))'"
+                h2 使える言語
+                ul
+                    li bash
+                    li clang-c
+                    li clang-cpp
+                    li dc
+                    li gcc-c
+                    li gcc-cpp
+                    li raku
+                    li ruby
+                    li rust
+                    li nibbles
+                    li perl
+                    li pypy
+                    li python
                 h2 既知の不具合
                 ul
                     li UTF-8として解釈できないソースコードを提出できない
                     li ランキングの表がスマホからだと見づらい
                     li atlasにある特定のdockerイメージを消すとジャッジできなくなる
-                    li 実行時間にdocker execのオーバーヘッドが含まれてしまっている
                     li 11位以降の提出が見れない
             div: include:markdown problems/1.md
             div: include:markdown problems/2.md

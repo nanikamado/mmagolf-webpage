@@ -28,6 +28,12 @@ h2 {
     }
 }
 
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
 .pages {
     position: relative;
     z-index: 1;
@@ -48,7 +54,7 @@ h2 {
         .code-with-katex>p,
         pre {
             border: 1px solid #000;
-            margin: 0;
+            margin: 1em 0;
             padding: .5em;
             box-shadow: 2px 2px 0px #000;
         }
@@ -122,11 +128,6 @@ table.ranking {
         >tr>:is(td, th):nth-child(2) {
             text-align: right;
         }
-    }
-    pre {
-        margin: 0;
-        white-space: pre-wrap;
-        word-break: break-all;
     }
     a {
         color: #000;
