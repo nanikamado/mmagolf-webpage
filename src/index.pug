@@ -6,8 +6,8 @@ html(lang="ja")
         script(src="main.js")
         link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.css" integrity="sha256-tNxXsOT6dx9hXElc6ZSLWyMEp94gnMIxPGrJqzCZ1Ww=" crossorigin="anonymous")
         link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous")
-        link(href="style.css?1652997335", rel="stylesheet")
-        title MMA コードゴルフ大会
+        link(href="style.css?1653149022", rel="stylesheet")
+        title MMA コードゴルフコンテスト
     body
         .nav: ul
                 li: a(href=""): div 説明
@@ -16,8 +16,8 @@ html(lang="ja")
                 li: a(href="#rank"): div ランキング
         .pages
             div
-                h2 MMA コードゴルフ大会
-                p MMA 内でコードゴルフ大会を開催したいなと思っています。開催期間は一週間程度、開催時期は未定です。現状、動作確認用の問題として2つの問題が用意してあります。
+                h2 MMA コードゴルフコンテスト
+                p MMA 内でコードゴルフコンテストを開催したいと思っています。開催期間は一週間程度、開催時期は未定です。現状、動作確認用の問題として2つの問題が用意してあります。
                 h2 コードゴルフとは
                 p コードゴルフとは、どれだけ短いコードで目的のプログラムを書けるかを競う競技です。
                 h2 提出方法
@@ -29,21 +29,36 @@ html(lang="ja")
                 pre: code= "$ ~mado/.cargo/bin/mmagolf submit -p 1 -l bash -c 'read a;echo $((a+1))'"
                 p= "コードテストもできます。例:"
                 pre: code= "$ echo 1 | ~mado/.cargo/bin/mmagolf codetest -l bash -c 'read a;echo $((a+1))'"
+                h2 ルール、注意事項
+                ul
+                    li 最も短いコードでACした人が勝ちです。
+                    li 時間制限（TLE）は現状15秒に設定しています。（多分変えます）
+                    li UTF-8の文字列のみ提出可能です。
+                    li コード長は文字数ではなくバイト数です。
+                    li コンテストが始まってから言語が追加されることはありません。
+                    li 質問や不具合、脆弱性の報告などがあれば、Slackの #[a(href="https://app.slack.com/client/T052RB9B7/C03CKKVPTNZ") #_mado] に投稿してください。
+                    li コンテスト期間中も他の人の回答が見れます。一位の人の回答にもっと短くできる部分を見つけられれば、そこを短くして一位を取ることができます。
                 h2 使える言語
                 ul
+                    li awk
                     li bash
+                    li bc
                     li clang-c
                     li clang-cpp
                     li dc
+                    li fish
                     li gcc-c
                     li gcc-cpp
                     li raku
                     li ruby
                     li rust
+                    li sed
                     li nibbles
                     li perl
                     li pypy
                     li python
+                    li vim
+                    li zsh
                 h2 既知の不具合
                 ul
                     li UTF-8として解釈できないソースコードを提出できない
@@ -71,3 +86,6 @@ html(lang="ja")
                         th 提出者
                         th
                     tbody
+                ul
+                    li ある言語の中で1位になっている提出か、ある言語の中で1位を取ったことがある提出のみがランキングに表示されます。
+                    li 11位以降は表示されません。

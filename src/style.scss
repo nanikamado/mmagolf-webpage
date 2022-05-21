@@ -34,6 +34,10 @@ pre {
     word-break: break-all;
 }
 
+a {
+    color: unset;
+}
+
 .pages {
     position: relative;
     z-index: 1;
@@ -73,7 +77,6 @@ pre {
         padding: 0;
         max-width: 50rem;
         a {
-            color: unset;
             text-decoration: none;
             width: 100%;
         }
