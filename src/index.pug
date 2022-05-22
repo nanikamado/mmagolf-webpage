@@ -35,9 +35,10 @@ html(lang="ja")
                     li 時間制限（TLE）は現状15秒に設定しています。（多分変えます）
                     li UTF-8の文字列のみ提出可能です。
                     li コード長は文字数ではなくバイト数です。
-                    li コンテストが始まってから言語が追加されることはありません。
-                    li 質問や不具合、脆弱性の報告などがあれば、Slackの #[a(href="https://app.slack.com/client/T052RB9B7/C03CKKVPTNZ") #_mado] に投稿してください。
+                    li コンテストが始まってから言語やライブラリを追加することはありません。ただ、不具合がある場合は修正するかもしれません。
                     li コンテスト期間中も他の人の回答が見れます。一位の人の回答にもっと短くできる部分を見つけられれば、そこを短くして一位を取ることができます。
+                    li 企画者のmadoや、作問者のsepa38さんも参加します。他の人より先に問題を見ているので不公平ですが、僕たちもコードゴルフがやりたいので許してください。
+                    li 質問や不具合、脆弱性の報告などがあれば、Slackの #[a(href="https://app.slack.com/client/T052RB9B7/C03CKKVPTNZ") #_mado] に投稿してください。
                 h2 使える言語
                 ul
                     li awk
@@ -65,6 +66,11 @@ html(lang="ja")
                     li ランキングの表がスマホからだと見づらい
                     li atlasにある特定のdockerイメージを消すとジャッジできなくなる
                     li 11位以降の提出が見れない
+                h2 ジャッジシステムのソースコード
+                ul
+                    li ジャッジシステムのソースコード: #[a(href="https://github.com/nanikamado/mmagolf-judge") github.com/nanikamado/mmagolf-judge]
+                    li 提出ツールのソースコード: #[a(href="https://github.com/nanikamado/mmagolf") github.com/nanikamado/mmagolf]
+                    li このWebページのソースコード: #[a(href="https://github.com/nanikamado/mmagolf-webpage") github.com/nanikamado/mmagolf-webpage]
             div: include:markdown problems/1.md
             div: include:markdown problems/2.md
             .rankings
@@ -87,5 +93,5 @@ html(lang="ja")
                         th
                     tbody
                 ul
-                    li ある言語の中で1位になっている提出か、ある言語の中で1位を取ったことがある提出のみがランキングに表示されます。
+                    li ある言語の中で1位になっているか、なったことのある提出のみがランキングに表示されます。
                     li 11位以降は表示されません。
