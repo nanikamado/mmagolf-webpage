@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.css" integrity="sha256-tNxXsOT6dx9hXElc6ZSLWyMEp94gnMIxPGrJqzCZ1Ww=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous"><link href="../../style.css" rel="stylesheet"><link href="../style.css" rel="stylesheet"><script src="../../copy_button.js"></script><title>MMA コードゴルフコンテスト</title></head><body><div class="nav"><ul><li><a href="../.."><div>説明</div></a></li><li><a href="../../#problems"><div>問題一覧</div></a></li><li><a href="../../#rank"><div>ランキング</div></a></li></ul></div><div class="pages"><div><h1>Divide Salary</h1><div><h2>問題文</h2>
+<p>セパくんとやきとりくんは、二人で <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> だけお給料をもらいました。
+二人は話し合いの結果、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> が偶数の時は半分ずつ、奇数の時はやきとりくんが <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> だけ多くもらうことにしました。
+それぞれがもらうお金を求めてください。</p>
+<h3>制約</h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>S</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">1 \leq S \leq 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span></li>
+</ul>
+<h3>入力</h3>
+<p>入力はすべて整数である。</p>
+<div>
+            <pre><code>S
+</code></pre>
+
+            <div class="copy-button" data-clipboard-text="S
+">Copy</div>
+        </div><h3>出力</h3>
+<p>セパくん、やきとりくんの順に、空白で区切ってそれぞれがもらうお金を出力してください。</p>
+<h2>サンプル</h2>
+<div class="code-outer">
+                <div class="caption">入力1</div>
+                <pre><code class="language-入力1">10
+</code></pre>
+
+                <div class="copy-button" data-clipboard-text="10
+">Copy</div>
+            </div><div class="code-outer">
+                <div class="caption">出力1</div>
+                <pre><code class="language-出力1">5 5
+</code></pre>
+
+                <div class="copy-button" data-clipboard-text="5 5
+">Copy</div>
+            </div><p>偶数なので二人の受け取るお金は等しいです。</p>
+<div class="code-outer">
+                <div class="caption">入力2</div>
+                <pre><code class="language-入力2">15
+</code></pre>
+
+                <div class="copy-button" data-clipboard-text="15
+">Copy</div>
+            </div><div class="code-outer">
+                <div class="caption">出力2</div>
+                <pre><code class="language-出力2">7 8
+</code></pre>
+
+                <div class="copy-button" data-clipboard-text="7 8
+">Copy</div>
+            </div><p>奇数なのでやきとりくんが <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> だけ多く受け取ります。</p>
+</div><h2>提出用コマンド</h2><div class="code-outer"><pre><code>~mado/.cargo/bin/mmagolf submit -p divide_salary -l [言語] -f [ソースファイル]</code></pre><div class="copy-button" data-clipboard-text="~mado/.cargo/bin/mmagolf submit -p divide_salary -l [言語] -f [ソースファイル]">Copy</div></div><h2>実行時間制限</h2><div>2秒</div><h2>テストケース</h2><table><thead><tr><th>入力</th><th>出力</th></tr></thead><hbody><tr><td><a href="testcases/in/sample1.txt" target="_blank">in/sample1.txt</a></td><td><a href="testcases/out/sample1.txt" target="_blank">out/sample1.txt</a></td></tr><tr><td><a href="testcases/in/sample2.txt" target="_blank">in/sample2.txt</a></td><td><a href="testcases/out/sample2.txt" target="_blank">out/sample2.txt</a></td></tr><tr><td><a href="testcases/in/rand1.txt" target="_blank">in/rand1.txt</a></td><td><a href="testcases/out/rand1.txt" target="_blank">out/rand1.txt</a></td></tr><tr><td><a href="testcases/in/rand2.txt" target="_blank">in/rand2.txt</a></td><td><a href="testcases/out/rand2.txt" target="_blank">out/rand2.txt</a></td></tr><tr><td><a href="testcases/in/rand3.txt" target="_blank">in/rand3.txt</a></td><td><a href="testcases/out/rand3.txt" target="_blank">out/rand3.txt</a></td></tr><tr><td><a href="testcases/in/rand4.txt" target="_blank">in/rand4.txt</a></td><td><a href="testcases/out/rand4.txt" target="_blank">out/rand4.txt</a></td></tr><tr><td><a href="testcases/in/rand5.txt" target="_blank">in/rand5.txt</a></td><td><a href="testcases/out/rand5.txt" target="_blank">out/rand5.txt</a></td></tr><tr><td><a href="testcases/in/rand6.txt" target="_blank">in/rand6.txt</a></td><td><a href="testcases/out/rand6.txt" target="_blank">out/rand6.txt</a></td></tr><tr><td><a href="testcases/in/rand7.txt" target="_blank">in/rand7.txt</a></td><td><a href="testcases/out/rand7.txt" target="_blank">out/rand7.txt</a></td></tr><tr><td><a href="testcases/in/rand8.txt" target="_blank">in/rand8.txt</a></td><td><a href="testcases/out/rand8.txt" target="_blank">out/rand8.txt</a></td></tr></hbody></table><h2>作問</h2><div>sepa38</div></div></div></body></html>

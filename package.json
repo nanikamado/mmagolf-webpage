@@ -9,5 +9,9 @@
     "markdown-it-container": "^3.0.0",
     "sass": "^1.51.0",
     "through2": "^4.0.2"
+  },
+  "dependencies": {
+    "event-stream": "^4.0.1",
+    "markdown-it-code-copy": "^0.1.1"
   }
 }

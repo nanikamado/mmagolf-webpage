@@ -1,0 +1,7 @@
+.pages>div {
+    display: block;
+}
+
+.pages table :is(thead>tr>th, td) {
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+divide_salary
+divide_and_multiple
+too_many_divisor
+eaten_permutation
+continuous_subsequence_sort
+count_permutation
+npmq
+xor_pair
+section_product
+section_product_2

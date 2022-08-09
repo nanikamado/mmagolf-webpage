@@ -28,25 +28,38 @@
         window.addEventListener('popstate', e => {
             movePage(hash_to_n(location.hash));
         });
-        fetch("ranking.json", { cache: "no-cache" })
-            .then(response =>
-                response.json()
-            ).then(ranking => {
-                $$('.rankings>.ranking>tbody').forEach((tbody, i) => {
-                    ranking[i].forEach((r, j) => {
-                        let tr = document.createElement("tr");
-                        tr.innerHTML = `<td rowspan="2">${j + 1}</td><td>${r[0]} B</td><td>${r[1]}</td><td>${r[2]}</td><td><a href="javascript:void(0)" class="detail-button">詳細</a></td>`;
-                        tbody.appendChild(tr);
-                        let code = document.createElement("tr");
-                        code.classList.add('code');
-                        code.innerHTML = `<td colspan="${r.length - 1}"><div><table><tbody><tr><th>提出日時</th></tr><tr><td>${r[3]}</td></tr><tr><th>コード</th></tr><tr><td><pre>${r[4]}&#010;</pre></td></tr></tbody></table></div></td>`;
-                        tbody.appendChild(code);
-                    });
+        const copy_buttons = document.getElementsByClassName("copy-button");
+        [...copy_buttons].map(copy_button => copy_button.addEventListener("click", () => {
+            navigator.clipboard.writeText(copy_button.clipboardText);
+            copy_button.innerHTML = "Copied";
+            setTimeout(() => copy_button.innerHTML = 'Copy', 1000)
+        }));
+        const ranking_table_tmp = $('#ranking-table');
+        const ranking_elm = $('.rankings');
+        const ranking_ul = $('.rankings>ul');
+        (async () => {
+            const ranking = await (await fetch("ranking.json", { cache: "no-cache" })).json();
+            const problems = await (await fetch("problems.json")).json();
+            problems.forEach(p => {
+                let ranking_table = ranking_table_tmp.content.cloneNode(true);
+                let tbody = ranking_table.querySelector('table>tbody');
+                let h = ranking_table.querySelector('h2');
+                h.innerHTML = `<a href="problem/${p.id}">${p.title}</a>`;
+                (ranking[p.id] || []).forEach((r, j) => {
+                    let tr = document.createElement("tr");
+                    tr.innerHTML = `<td rowspan="2">${j + 1}</td><td>${r[0]} B</td><td>${r[1]}</td><td>${r[2]}</td><td><a href="javascript:void(0)" class="detail-button">詳細</a></td>`;
+                    tbody.appendChild(tr);
+                    let code = document.createElement("tr");
+                    code.classList.add('code');
+                    code.innerHTML = `<td colspan="${r.length - 1}"><div><table><tbody><tr><th>提出日時</th></tr><tr><td>${r[3]}</td></tr><tr><th>コード</th></tr><tr><td><pre>${r[4]}&#010;</pre></td></tr></tbody></table></div></td>`;
+                    tbody.appendChild(code);
                 });
-                $$('table.ranking .detail-button').forEach(e => e.addEventListener('click', e => {
-                    e.target.parentNode.parentNode.classList.toggle('expanded');
-                }));
+                ranking_elm.insertBefore(ranking_table, ranking_ul);
             });
+            $$('table.ranking .detail-button').forEach(e => e.addEventListener('click', e => {
+                e.target.parentNode.parentNode.classList.toggle('expanded');
+            }));
+        })();
     };
     document.addEventListener("DOMContentLoaded", main);
 })();
